@@ -9,7 +9,7 @@ function Counter(props) {
   const decrement = () => {
      setcount(count-1)
    };
-
+//this comment to test git
   return (
        <>
       
