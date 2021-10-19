@@ -1,0 +1,63 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css");
+.portofolio {
+    position: relative;
+    padding: 1.25rem;
+    margin: 2rem auto;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    max-width: 58rem;
+    display: flex;
+    justify-content: space-between;
+    min-width: 48em;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.portofolio__image {
+    position: relative;
+    flex-shrink: 0;
+    flex-basis: clamp(10vw, 40vw, 30rem);
+    height: min(70vw, 20rem);
+    border-radius: 10px;
+    height: auto;
+}
+
+.portofolio__body {
+    padding: clamp(1rem, 3vw, 2rem) 1.25rem;
+    padding-left: clamp(1.25rem, 3vw, 2rem);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.portofolio__title {
+    font-size: clamp(1.1rem, 5vw, 1.5625rem);
+    margin-bottom: 0.5rem;
+}
+
+.portofolio__description {
+    line-height: 1.6rem;
+}
+
+.author__name-wrap i {
+    font-size: 2rem;
+    margin: 1rem;
+}
+
+.skills {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.portofolio__footer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: clamp(0.5rem, 5vw, 2rem);
+}
+
+
+/* ***** */

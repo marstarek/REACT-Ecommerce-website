@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.flex {
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    min-width: 15rem;
+    max-width: calc(12.5rem + 13vw);
+    background: #fff;
+    border-radius: 0.75em;
+    overflow: hidden;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    transition: transform 270ms ease;
+    position: relative;
+    padding: 1rem;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.imgo {
+    display: block;
+    max-width: 50%;
+    aspect-ratio: 1;
+    margin-bottom: 1em;
+}
+
+.card-body {
+    height: 300px;
+    padding: 1em 0;
+}
+
+p {
+    color: #0009;
+    text-align: center;
+    margin: 1em auto;
+    padding-inline: 0.5em;
+    max-height: 6rem;
+    overflow: hidden;
+}

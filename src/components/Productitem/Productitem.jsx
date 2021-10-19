@@ -1,30 +1,44 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-const Productitem = () => {
-     const [product, setproduct] = useState({});
+import Spinner from "react-bootstrap/Spinner";
 
-     useEffect(() => {
-          getProductitem()
-     }, [])
-     
-     const getProductitem = () => {
-          fetch('https://fakestoreapi.com/products/1')
-            .then(res=>res.json())
-            .then(json=>setproduct(json))
-     }
+import "./proitem.css";
+const Productitem = ({ match }) => {
+  const [product, setproduct] = useState({});
+
+  useEffect(() => {
+    getProductitem();
+  }, []);
+
+  const getProductitem = () => {
+    fetch(`https://fakestoreapi.com/products/${match.params.id}`)
+      .then((res) => res.json())
+      .then((json) => setproduct(json));
+  };
   return (
-  <div className="row  mx-5 my-5">
-<div   key={product.id} className="card w-25 mx-3 my-3  justify-content-center">
-  <img src={product.image} className="card-img-top w-50 mx-auto" alt="..."/>
-  <div className="card-body">
-    <h5 className="card-title">{product.title}</h5>
-    <h6>{product.price}</h6>
-    <p className="card-text ">{product.description}</p>
-  </div>
-</div> 
-  </div>
-  )
+    <div>
+      {product ? (
+        <article className="product">
+          <div className="product__image">
+            <img src={product.image} className=" w-50 mx-auto" alt="..." />
+          </div>
+          <div className="product__body">
+            <div className="product__text">
+              <h2 className="product__title">{product.title}</h2>
+              <p className="product__description">{product.description}</p>
+              <h6 className="product__title">Price: {product.price}$</h6>
+              <h6 className="product__title">category: {product.category}</h6>
+            </div>
+          </div>
+        </article>
+      ) : (
+        <Spinner animation="border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+      )}
+    </div>
+  );
 };
 
 export default Productitem;

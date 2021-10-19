@@ -1,32 +1,52 @@
 import React from "react";
-// import logo from '../../../public/me.jpeg';
+import logo from "../../imag/me.jpeg";
+import "./homestyle.css";
 const Home = () => {
   return (
-  
-  <section>
-<div className="header row my-5 mx-5" >
-<div className="col-6" ><figure>
-{/* <img src={logo} alt="Logo" /> */}
-photo
-</figure></div>
-<div className="col-6" ><article>
-     <h1>Tarek Ahmed Elrashidy</h1>
-     <p> Et quod est. Vel iure blanditiis sit quia rem. Id nihil nam id sed ea. Vitae totam et sit dolores qui voluptatem occaecati dolores. Cumque sequi architecto ut perferendis ipsa earum.
- 
-Fugiat saepe aut omnis vero. Exercitationem voluptas in aliquid corrupti exercitationem neque earum qui. Est et amet modi eligendi.
- 
-Eum cupiditate iure ut placeat cum quasi est dolores in. Consequatur reprehenderit fuga labore laborum qui eos ipsam voluptatem. Animi nisi fugiat vero laborum. Quos et et tenetur et. </p>
-</article>
+    <>
+      <article className="portofolio">
+        <div className="portofolio__image">
+          <img className="portofolio__image" src={logo} alt="Logo" />
+        </div>
+        <div className="portofolio__body">
+          <div className="portofolio__text">
+            <h2 className="portofolio__title fs-2 my-4">
+              Tarek Ahmed Elrashidy
+            </h2>
+            <h4 className="portofolio__description">Web Designer</h4>
+            <p>
+              Web designers plan, create and code internet sites and web pages,
+              many of which combine text with sounds, pictures, graphics and
+              video clips
+            </p>
+            <h5>Skills</h5>
+            <ul className="skills">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>Bootstrap</li>
+              <li>Javascript</li>
+              <li>Angular</li>
+              <li>React</li>
+            </ul>
+          </div>
 
-</div>
-</div>
-
-
-  </section>
-  
-  
-  
-  )
+          <div className="portofolio__footer mx-auto">
+            <div className="author__name-wrap">
+              <a href="https://www.facebook.com/tarekahmed9368">
+                <i class="bi bi-facebook"></i>
+              </a>
+              <a href=" https://github.com/marstarek">
+                <i class="bi bi-github"></i>
+              </a>
+              <a href=" https://www.linkedin.com/in/tarek-ahmed-89b403190/">
+                <i class="bi bi-linkedin"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </>
+  );
 };
 
 export default Home;
