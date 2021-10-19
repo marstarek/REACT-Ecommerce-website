@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import Spinner from "react-bootstrap/Spinner";
-
 import "./proitem.css";
 const Productitem = ({ match }) => {
   const [product, setproduct] = useState({});
@@ -19,7 +18,7 @@ const Productitem = ({ match }) => {
   return (
     <div>
       {product ? (
-        <article className="product">
+        <article key={product.id} className="product">
           <div className="product__image">
             <img src={product.image} className=" w-50 mx-auto" alt="..." />
           </div>

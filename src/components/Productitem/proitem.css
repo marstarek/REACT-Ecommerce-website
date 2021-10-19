@@ -1,9 +1,4 @@
-/* Base */
-
-html {
-    font-size: 100%;
-    box-sizing: border-box;
-}
+/* import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"; */
 
  :root {
     --fw-regular: 400;
