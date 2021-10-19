@@ -14,7 +14,7 @@ function Showcount(props) {
           <p>count is  0</p>
       }
             <button className="button-43" onClick={props.increment}> increment </button>
-            
+            <h2>simple counter</h2>
           </div>
         </div>
       </div>
