@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import Spinner from "react-bootstrap/Spinner";
 import "./proitem.css";
 const Productitem = ({ match }) => {
-  const [product, setproduct] = useState({});
+  const [product, setproduct] = useState(null);
 
   useEffect(() => {
     getProductitem();
