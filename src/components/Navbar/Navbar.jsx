@@ -42,6 +42,15 @@ const Navbar = () => {
                   products
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link
+                  to="/todo"
+                  className="nav-link active"
+                  aria-current="page"
+                >
+                  Todo
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
