@@ -39,6 +39,7 @@ const Products = () => {
                       <h5 className="card-title ">{product.title}</h5>
                       <h6>{product.price}</h6>
                       <p className="card-text ">{product.description}</p>
+                      //وانت رايح خد معاك الid 
                       <Link
                         to={`/products/${product.id}`}
                         className="btn btn-primary"
