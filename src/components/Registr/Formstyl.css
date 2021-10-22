@@ -8,7 +8,8 @@
     background-color: #5F9EA0;
     border-radius: 20px;
     margin: 0 auto;
-    align-content: center
+    align-content: center;
+    padding: 10px;
 }
 
 label {
@@ -31,3 +32,9 @@ select {
 select {
     width: 30%;
 }
+
+.hope input {
+    width: 70%
+}
+
+.inpot {}
