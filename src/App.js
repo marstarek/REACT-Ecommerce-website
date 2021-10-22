@@ -9,6 +9,7 @@ import Products from "./components/Products/Products";
 import Productitem from "./components/Productitem/Productitem";
 import Todo from "./Views/TODO/Todo";
 import Login from "./components/Login/Login";
+import Formic from "./components/Registr/Formic";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route component={Productitem} path="/products/:id" />
             <Route component={Todo} path="/todo" />
             <Route component={Login} path="/login" />
+            <Route component={Formic} path="/Registr" />
           </div>{" "}
           <Counter />
         </Switch>{" "}

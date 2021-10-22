@@ -9,10 +9,11 @@ const Login = () => {
       password: "",
       rememberMe: false,
     },
+
     onSubmit: (values) => window.alert("you are login successfully"),
     validationSchema: yup.object({
-      email: yup.string().required().email("invalid email"),
-      password: yup.string().required(),
+      email: yup.string().required().email("invalid email!"),
+      password: yup.string().required("password is requierd!"),
     }),
   });
   return (
@@ -35,6 +36,7 @@ const Login = () => {
               value={formik.values.email}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
+              // == {...formik.getFieldProps(name)}
             />
           </div>
 
@@ -55,9 +57,7 @@ const Login = () => {
               placeholder="password"
               aria-label="password"
               aria-describedby="basic-addon1"
-              value={formik.values.password}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
+              {...formik.getFieldProps("password")}
             />
           </div>
           {formik.touched.password && formik.errors.password && (
@@ -71,8 +71,7 @@ const Login = () => {
               value=""
               name="rememberMe"
               id="rememberMe"
-              onChange={formik.handleChange}
-              defaultChecked={formik.values.rememberMe}
+              {...formik.getFieldProps("rememberMe")}
             />
             <label class="form-check-label" for="flexCheckDefault">
               rememberMe
@@ -81,7 +80,7 @@ const Login = () => {
           <div className="">
             {" "}
             I Dont Have Account
-            <Link to="/todo" className="nav-link active" aria-current="page">
+            <Link to="/Registr" className="nav-link active" aria-current="page">
               Registration
             </Link>
           </div>
@@ -92,11 +91,6 @@ const Login = () => {
           >
             login
           </button>
-          {/* {formik.isValid && formik.dirty ? (
-            <div className="fs-4 text-success">you are login successfully</div>
-          ) : (
-            <div className="fs-4 text-danger">pleas try another time</div>
-          )} */}
         </form>
       </div>
     </div>

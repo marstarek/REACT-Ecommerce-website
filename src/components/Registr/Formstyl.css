@@ -1,0 +1,33 @@
+.containerx {
+    width: 100%;
+    background-color: rgb(255, 255, 255)
+}
+
+.cardx {
+    width: 40%;
+    background-color: #5F9EA0;
+    border-radius: 20px;
+    margin: 0 auto;
+    align-content: center
+}
+
+label {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+form {
+    margin: 0 auto;
+}
+
+input,
+select {
+    padding: 4px;
+    border-radius: 5px;
+    width: 80%;
+    border: none;
+}
+
+select {
+    width: 30%;
+}

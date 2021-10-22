@@ -60,6 +60,15 @@ const Navbar = () => {
                   Login
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link
+                  to="/Registr"
+                  className="nav-link active"
+                  aria-current="page"
+                >
+                  Registration
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
