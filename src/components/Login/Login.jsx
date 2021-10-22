@@ -9,7 +9,7 @@ const Login = () => {
       password: "",
       rememberMe: false,
     },
-    onSubmit: (values) => console.log(values),
+    onSubmit: (values) => window.alert("you are login successfully"),
     validationSchema: yup.object({
       email: yup.string().required().email("invalid email"),
       password: yup.string().required(),
@@ -38,7 +38,7 @@ const Login = () => {
             />
           </div>
 
-          {formik.errors.email && (
+          {formik.touched.email && formik.errors.email && (
             <p className="text-danger">{formik.errors.email}</p>
           )}
           {/* password */}
@@ -60,7 +60,7 @@ const Login = () => {
               onBlur={formik.handleBlur}
             />
           </div>
-          {formik.errors.password && (
+          {formik.touched.password && formik.errors.password && (
             <div style={{ color: "red" }}>{formik.errors.password}</div>
           )}
           {/* check btn */}
