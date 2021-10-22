@@ -8,6 +8,7 @@ import Home from "./components/Home/Home";
 import Products from "./components/Products/Products";
 import Productitem from "./components/Productitem/Productitem";
 import Todo from "./Views/TODO/Todo";
+import Login from "./components/Login/Login";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route component={Products} path="/products" exact />
             <Route component={Productitem} path="/products/:id" />
             <Route component={Todo} path="/todo" />
+            <Route component={Login} path="/login" />
           </div>{" "}
           <Counter />
         </Switch>{" "}

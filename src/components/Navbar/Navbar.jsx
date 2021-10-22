@@ -51,6 +51,15 @@ const Navbar = () => {
                   Todo
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link
+                  to="/login"
+                  className="nav-link active"
+                  aria-current="page"
+                >
+                  Login
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

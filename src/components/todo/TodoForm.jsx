@@ -1,12 +1,13 @@
 import { useState } from "react";
-
-const TodoForm = ({ addTodo }) => {
+import { useDispatch } from "react-redux";
+import { addTodoAction } from "../../Redux/todo";
+const TodoForm = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-
+  const dispatch = useDispatch();
   const handleSubmission = (e) => {
     e.preventDefault();
-    addTodo({ title, content });
+    dispatch(addTodoAction({ title, content }));
     setTitle("");
     setContent("");
   };

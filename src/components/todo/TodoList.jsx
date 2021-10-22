@@ -1,18 +1,22 @@
 import "../Products/productsstyle.css";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-const TodoList = ({ todos }) => {
-  const deleteTodo = () => {};
+import { removeTodoAction } from "../../Redux/todo";
+const TodoList = () => {
+  // const deleteTodo = () => {};
   const todostate = useSelector((state) => state.todos);
-
+  const dispatch = useDispatch();
+  const removetask = (title) => {
+    dispatch(removeTodoAction(title));
+  };
   return (
     <>
       <div class="containerr w-75">
         <div class="flex d-flex flex-nowrap w-100">
-          {todos.map((todo, i) => {
+          {todostate.map((todo, i) => {
             return (
               <>
-                {todos && todos.length > 0 ? (
+                {todostate && todostate.length > 0 ? (
                   <div class="card" key={i}>
                     <div class="card-body">
                       <h2 className="card-title text-dark ">
@@ -25,8 +29,10 @@ const TodoList = ({ todos }) => {
                     </div>
                     <button
                       type="button"
-                      onClick={deleteTodo({ i })}
-                      className="btn btn-danger   "
+                      className="btn btn-danger    "
+                      onClick={() => {
+                        removetask(todo.title);
+                      }}
                     >
                       Delete
                     </button>
