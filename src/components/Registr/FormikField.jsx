@@ -7,7 +7,7 @@ const FormikField = ({ name, type, label }) => {
       {(formikField) => {
         return (
           <>
-            <div class=" inpot my-2 w-100  mx-auto">
+            <div class=" inpot my-2 py-1 w-100  mx-auto">
               <label htmlFor={name}>{label}</label>
               <br></br>
               <input

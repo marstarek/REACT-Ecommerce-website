@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Field, ErrorMessage, Formik } from "formik";
+import { Form, Field, FieldArray, ErrorMessage, Formik } from "formik";
 import * as yup from "yup";
 import FormikField from "./FormikField";
 import "./Formstyl.css";
@@ -12,6 +12,7 @@ const Formic = () => {
     confirmPassword: "",
     active: false,
     gender: "",
+    hoppies: [""],
   };
   //onSubmit
   const onSubmit = (values) => window.alert("you are login successfully");
@@ -36,11 +37,12 @@ const Formic = () => {
       .oneOf([yup.ref("password"), null], "Passwords don't match."),
     active: yup.bool().oneOf([true], " please tell us  are you active "),
     gender: yup.string().required("Please select your gender"),
+    hoppies: yup.string(),
   });
 
   return (
     <div className="containerx  ">
-      <h3> Login </h3>
+      <h3> Registration </h3>
       <div className="cardx mx-auto text-center">
         <Formik
           initialValues={initialValues}
@@ -87,11 +89,43 @@ const Formic = () => {
                   }}
                 </Field>
                 {/* end of  gender input */}
+                <FieldArray name="hoppies">
+                  {(FieldArray) => {
+                    const { push, remove, form } = FieldArray;
+                    const { values } = form;
+                    const { hoppies } = values;
+                    return (
+                      <>
+                        <label htmlFor="hoppies">Hoppies</label>
+                        {hoppies.map((hope, index) => (
+                          <div className="hope" key={index}>
+                            <Field name={`hoppies[${index}]`} />
 
+                            {index > 0 && (
+                              <span
+                                type="span"
+                                className="btn btn-danger btn-sm"
+                                onClick={() => remove(index)}
+                              >
+                                Remove
+                              </span>
+                            )}
+                            <span
+                              type="button"
+                              className="btn btn-success btn-sm"
+                              onClick={() => push("")}
+                            >
+                              Add
+                            </span>
+                          </div>
+                        ))}
+                      </>
+                    );
+                  }}
+                </FieldArray>
                 {/* submite */}
                 <button
                   type="button "
-                  disabled={!(formik.isValid && formik.dirty)}
                   className="btn btn-success btn-lg my-5 px-4"
                 >
                   login
